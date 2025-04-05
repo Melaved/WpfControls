@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControls", "WpfControls\WpfControls.csproj", "{AFD89993-31DA-475B-8DBB-A88630D5BCEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View", "WpfControls\View.csproj", "{AFD89993-31DA-475B-8DBB-A88630D5BCEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{CA9D2D0C-F55E-47A6-B866-74A46A0CED24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\ViewModel.csproj", "{272B9776-8C88-4ADF-BCDC-C8FB0E034425}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{AFD89993-31DA-475B-8DBB-A88630D5BCEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFD89993-31DA-475B-8DBB-A88630D5BCEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFD89993-31DA-475B-8DBB-A88630D5BCEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA9D2D0C-F55E-47A6-B866-74A46A0CED24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9D2D0C-F55E-47A6-B866-74A46A0CED24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9D2D0C-F55E-47A6-B866-74A46A0CED24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9D2D0C-F55E-47A6-B866-74A46A0CED24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{272B9776-8C88-4ADF-BCDC-C8FB0E034425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{272B9776-8C88-4ADF-BCDC-C8FB0E034425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{272B9776-8C88-4ADF-BCDC-C8FB0E034425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{272B9776-8C88-4ADF-BCDC-C8FB0E034425}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
