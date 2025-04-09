@@ -17,7 +17,7 @@
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
 
-        <!-- Стиль для кнопок -->
+        <!--  Стиль для кнопок  -->
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
@@ -36,7 +36,7 @@
             </Style.Triggers>
         </Style>
 
-        <!-- Стиль кнопки удаления -->
+        <!--  Стиль кнопки удаления  -->
         <Style x:Key="FlatButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
@@ -51,7 +51,7 @@
             <Setter Property="HorizontalAlignment" Value="Right"/>
         </Style>
 
-        <!-- Стиль для ListBoxItem -->
+        <!--  Стиль для ListBoxItem  -->
         <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
@@ -62,10 +62,10 @@
                     <ControlTemplate TargetType="ListBoxItem">
                         <Border
                             Name="Bd"
+                            Padding="{TemplateBinding Padding}"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            Padding="{TemplateBinding Padding}">
+                            BorderThickness="{TemplateBinding BorderThickness}">
                             <ContentPresenter/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -89,15 +89,15 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- ListBox с элементами -->
+        <!--  ListBox с элементами  -->
         <ListBox
             Grid.Row="0"
             HorizontalContentAlignment="Stretch"
             Background="Transparent"
             BorderThickness="0"
+            ItemContainerStyle="{StaticResource ListBoxItemStyle}"
             ItemsSource="{Binding Files}"
-            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-            ItemContainerStyle="{StaticResource ListBoxItemStyle}">
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="{x:Type model:FileItem}">
                     <Grid>
@@ -106,14 +106,14 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <!-- Имя файла -->
+                        <!--  Имя файла  -->
                         <TextBlock
                             Margin="5 2"
                             VerticalAlignment="Center"
                             Text="{Binding Name}"
                             TextTrimming="CharacterEllipsis"/>
 
-                        <!-- Кнопка удаления -->
+                        <!--  Кнопка удаления  -->
                         <Button
                             Grid.Column="1"
                             Margin="5 0 5 0"
@@ -124,9 +124,9 @@
                             Style="{StaticResource FlatButtonStyle}">
                             <Button.Visibility>
                                 <Binding
-                                                Converter="{StaticResource BoolToVisibilityConverter}"
-                                                Path="IsMouseOver"
-                                                RelativeSource="{RelativeSource AncestorType=ListBoxItem}"/>
+                                    Converter="{StaticResource BoolToVisibilityConverter}"
+                                    Path="IsMouseOver"
+                                    RelativeSource="{RelativeSource AncestorType=ListBoxItem}"/>
                             </Button.Visibility>
                         </Button>
                     </Grid>
@@ -134,7 +134,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <!-- Кнопка добавления -->
+        <!--  Кнопка добавления  -->
         <Button
             Grid.Row="1"
             Width="30"
