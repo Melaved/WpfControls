@@ -4,16 +4,37 @@ using ViewModel;
 namespace View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Главное окно приложения.
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Инициализирует главное окно приложения и устанавливает контекст данных.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             DataContext = new MainViewModel();
         }
 
-        //TODO: реализовать AddFiles_Click и использовать OpenFileDialog
+        /// <summary>
+        /// Обработчик события нажатия кнопки добавления файлов.
+        /// </summary>
+        /// <param name="sender">Источник события (кнопка "+").</param>
+        /// <param name="e">Данные события <see cref="RoutedEventArgs"/>.</param>
+        private void AddFiles_Click(object sender, RoutedEventArgs e)
+        {
+            var fileDialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Multiselect = true,
+                Filter = "All files (*.*)|*.*"
+            };
+
+            if (fileDialog.ShowDialog() != true || DataContext is not MainViewModel viewModel)
+                return;
+
+            viewModel.AddFilesCommand.Execute(fileDialog.FileNames);
+        }
+
     }
 }
