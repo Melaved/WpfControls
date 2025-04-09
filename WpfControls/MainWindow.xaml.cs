@@ -24,16 +24,16 @@ namespace View
         /// <param name="e">Данные события <see cref="RoutedEventArgs"/>.</param>
         private void AddFiles_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new Microsoft.Win32.OpenFileDialog
+            var fileDialog = new Microsoft.Win32.OpenFileDialog
             {
                 Multiselect = true,
                 Filter = "All files (*.*)|*.*"
             };
 
-            if (dialog.ShowDialog() != true || DataContext is not MainViewModel vm)
+            if (fileDialog.ShowDialog() != true || DataContext is not MainViewModel viewModel)
                 return;
 
-            vm.AddFilesCommand.Execute(dialog.FileNames);
+            viewModel.AddFilesCommand.Execute(fileDialog.FileNames);
         }
 
     }

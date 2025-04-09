@@ -14,7 +14,7 @@ namespace Model
         private string _filePath;
 
         /// <summary>
-        /// Получает имя файла (без пути).
+        /// Возвращает имя файла.
         /// </summary>
         public string Name => Path.GetFileName(FilePath);
 

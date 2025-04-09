@@ -99,8 +99,8 @@
 
                 <!--  Кнопка добавления  -->
                 <Button
-                    Width="35"
-                    Height="35"
+                    Width="30"
+                    Height="30"
                     Margin="10"
                     HorizontalAlignment="Left"
                     Click="AddFiles_Click">

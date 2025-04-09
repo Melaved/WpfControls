@@ -12,7 +12,7 @@ namespace ViewModel
     public partial class MainViewModel : ObservableObject
     {
         /// <summary>
-        /// Коллекция файлов, отображаемая в UI.
+        /// Возвращает коллекцию файлов.
         /// Инициализируется данными из файла при создании ViewModel.
         /// </summary>
         public ObservableCollection<FileItem> Files { get; } = new (FileSerializer.LoadFiles());
