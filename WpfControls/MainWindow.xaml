@@ -17,7 +17,7 @@
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
 
-        <!--  Стиль для кнопок  -->
+        <!-- Стиль для кнопок -->
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
@@ -49,22 +49,19 @@
             </Setter>
         </Style>
 
-        <!--  Стиль кнопки удаления  -->
-        <!-- TODO: вместо всех этих манипуляций с шрифтами взять иконку красного крестика с интернета и сделать плоской кнопкой-иконкой. -->
+        <!-- Стиль кнопки удаления -->
+        <!-- TODO: вместо всех этих манипуляций с шрифтами взять иконку красного крестика с интернета и сделать плоской кнопкой-иконкой.(completed) -->
         <Style
             x:Key="FlatButtonStyle"
             BasedOn="{StaticResource ButtonStyle}"
             TargetType="Button">
-            <Setter Property="Foreground" Value="Red"/>
             <Setter Property="Padding" Value="0"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="FontSize" Value="14"/>
             <Setter Property="Width" Value="20"/>
             <Setter Property="Height" Value="20"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
         </Style>
 
-        <!--  Стиль для ListBoxItem  -->
+        <!-- Стиль для ListBoxItem -->
         <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
@@ -102,7 +99,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!--  ListBox с элементами  -->
+        <!-- ListBox с элементами -->
         <ListBox
             Grid.Row="0"
             HorizontalContentAlignment="Stretch"
@@ -119,22 +116,24 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <!--  Имя файла  -->
+                        <!-- Имя файла -->
                         <TextBlock
                             Margin="5 2"
                             VerticalAlignment="Center"
                             Text="{Binding Name}"
                             TextTrimming="CharacterEllipsis"/>
 
-                        <!--  Кнопка удаления  -->
+                        <!-- Кнопка удаления -->
                         <Button
                             Grid.Column="1"
                             Margin="5 0 5 0"
                             VerticalAlignment="Center"
                             Command="{Binding DataContext.RemoveFileCommand, RelativeSource={RelativeSource AncestorType=Window}}"
                             CommandParameter="{Binding}"
-                            Content="✖"
                             Style="{StaticResource FlatButtonStyle}">
+                            <Button.Content>
+                                <Image Source="Resources/Delete.png" Stretch="Uniform"/>
+                            </Button.Content>
                             <Button.Visibility>
                                 <Binding
                                     Converter="{StaticResource BoolToVisibilityConverter}"
@@ -147,7 +146,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <!--  Кнопка добавления  -->
+        <!-- Кнопка добавления -->
         <Button
             Grid.Row="1"
             Width="30"

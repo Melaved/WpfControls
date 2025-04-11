@@ -25,16 +25,13 @@ namespace ViewModel
         [RelayCommand]
         public void AddFiles(IEnumerable<string> filePaths)
         {
+
             foreach (var path in filePaths)
             {
-                // TODO: использовать All, назвать нормально аргумент лямбда функции.
-                if (!Files.Any(f => f.FilePath == path))
+                // TODO: использовать All, назвать нормально аргумент лямбда функции.(completed)
+                if (Files.Count == 0 || Files.All(file => file.FilePath != path))
                 {
-                    Files.Add(
-                        new FileItem
-                        {
-                            FilePath = path
-                        });
+                    Files.Add(new FileItem { FilePath = path });
                 }
             }
             FileSerializer.SaveFiles(Files);

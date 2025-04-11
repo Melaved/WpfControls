@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="Resources\Add.png" />
+    <None Remove="Resources\Delete.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +20,7 @@
 
   <ItemGroup>
     <Resource Include="Resources\Add.png" />
+    <Resource Include="Resources\Delete.png" />
   </ItemGroup>
 
 </Project>
