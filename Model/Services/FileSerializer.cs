@@ -9,6 +9,7 @@ namespace Model.Services
     {
         /// <summary>
         /// Путь к файлу, в который сохраняются контакты.
+        /// TODO: неправильное именование переменной.
         /// </summary>
         private static readonly string _JsonFilePath;
 
@@ -17,6 +18,7 @@ namespace Model.Services
         /// </summary>
         static FileSerializer()
         {
+            // TODO: вообще сохранения между сессиями в задании не требовалось, к тому же путь принадлежит другому приложению, при загрузке/сохранении может повредит для него данные.
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var contactsFolder = Path.Combine(appDataPath, "Contacts");
             Directory.CreateDirectory(contactsFolder);

@@ -27,6 +27,7 @@ namespace ViewModel
         {
             foreach (var path in filePaths)
             {
+                // TODO: использовать All, назвать нормально аргумент лямбда функции.
                 if (!Files.Any(f => f.FilePath == path))
                 {
                     Files.Add(
