@@ -50,7 +50,6 @@
         </Style>
 
         <!-- Стиль кнопки удаления -->
-        <!-- TODO: вместо всех этих манипуляций с шрифтами взять иконку красного крестика с интернета и сделать плоской кнопкой-иконкой.(completed) -->
         <Style
             x:Key="FlatButtonStyle"
             BasedOn="{StaticResource ButtonStyle}"
